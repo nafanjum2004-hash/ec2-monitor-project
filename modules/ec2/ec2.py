@@ -27,7 +27,7 @@ def get_ec2_details():
                     if tag['Key'] == 'Name':
 
                         name = tag['Value']
-
+            if state == "running":
             instance_data = {
                 "Name": name,
                 "InstanceId": instance_id,
