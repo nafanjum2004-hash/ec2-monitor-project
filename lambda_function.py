@@ -13,5 +13,5 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': 'Ec2 Successfully Queried'
+        'body': 'Ec2 Successfully'
     }
