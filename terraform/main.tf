@@ -1,16 +1,17 @@
-# Root Terraform Configuration
+module "ec2" {
+  source = "./modules/ec2"
 
-# Future module references can be added here
+  ami_id        = var.ami_id
+  instance_type = var.instance_type
+}
 
-# Example:
-# module "ec2" {
-#   source = "./modules/ec2"
-# }
+module "iam" {
+  source = "./modules/iam"
+}
 
-# module "iam" {
-#   source = "./modules/iam"
-# }
+module "lambda" {
+  source = "./modules/lambda"
 
-# module "lambda" {
-#   source = "./modules/lambda"
-# }
+  role_arn   = module.iam.role_arn
+  lambda_zip = "lambda.zip"
+}
