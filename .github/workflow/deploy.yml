@@ -23,9 +23,7 @@ steps:
 
   - name: Create Lambda Package
     run: |
-      zip -r lambda.zip . \
-        -x ".git/*" \
-        -x "terraform/*"
+      zip -r lambda.zip . -x ".git/*" -x "terraform/*"
 
   - name: Setup Terraform
     uses: hashicorp/setup-terraform@v3
