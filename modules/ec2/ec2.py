@@ -27,14 +27,16 @@ def get_ec2_details():
                     if tag['Key'] == 'Name':
 
                         name = tag['Value']
-            if state == "running":
-            instance_data = {
-                "Name": name,
-                "InstanceId": instance_id,
-                "State": state,
-                "PublicIP": public_ip
-            }
 
-            instance_list.append(instance_data)
+            if state == "running":
+
+                instance_data = {
+                    "Name": name,
+                    "InstanceId": instance_id,
+                    "State": state,
+                    "PublicIP": public_ip
+                }
+
+                instance_list.append(instance_data)
 
     return instance_list
