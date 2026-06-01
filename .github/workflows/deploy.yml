@@ -38,6 +38,11 @@ jobs:
           cd terraform
           terraform plan
 
+      - name: Terraform Apply
+        run: |
+          cd terraform
+          terraform apply -auto-approve
+
       - name: Create Lambda Package
         run: |
           zip -r lambda.zip . \
