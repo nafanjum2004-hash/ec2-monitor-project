@@ -5,7 +5,6 @@ def lambda_handler(event, context):
     ec2_data = get_ec2_details()
 
     for instance in ec2_data:
-
         print("-----------")
         print(f"Name: {instance['Name']}")
         print(f"Instance ID: {instance['InstanceId']}")
@@ -14,5 +13,5 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': 'Ec2 Succesfully Queried'
+        'body': 'Ec2 Successfully Queried'
     }
