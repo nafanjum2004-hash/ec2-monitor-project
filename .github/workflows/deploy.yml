@@ -48,7 +48,7 @@ jobs:
 
       - name: Deploy Lambda Function
         run: |
-          aws lambda update-function-code \
-            --function-name ec2-monitor-function \
+          aws lambda update-function-code 
+            --function-name ec2-monitor-function 
             --zip-file fileb://lambda.zip
 
