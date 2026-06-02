@@ -21,7 +21,7 @@ jobs:
 
       - name: Create Lambda Package
         run: |
-          zip -r lambda.zip . -x ".git/*" -x "terraform/*"
+          zip -r terraform/lambda.zip . -x ".git/*" -x "terraform/.terraform/"
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
