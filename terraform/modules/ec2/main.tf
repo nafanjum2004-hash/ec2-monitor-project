@@ -24,3 +24,12 @@ resource "aws_instance" "server3" {
     Name = "Server-3"
   }
 }
+
+resource "aws_instance" "server4" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  tags = {
+    Name = "Server-4"
+  }
+}

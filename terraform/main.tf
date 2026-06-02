@@ -13,5 +13,5 @@ module "lambda" {
   source = "./modules/lambda"
 
   role_arn   = module.iam.role_arn
-  lambda_zip = "../lambda.zip"
+  lambda_zip = "lambda.zip"
 }
