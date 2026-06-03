@@ -48,15 +48,15 @@ jobs:
       - name: Terraform Plan
         run: |
           cd terraform
-          terraform plan 
-            -var="instance_type=${{ github.event.inputs.instance_type || 't2.micro' }}"
+          terraform plan \
+            -var="instance_type=${{ github.event.inputs.instance_type || 't2.micro' }}" \
             -var="aws_region=${{ github.event.inputs.aws_region || 'ap-south-1' }}"
 
       - name: Terraform Apply
         run: |
           cd terraform
           terraform apply -auto-approve \
-            -var="instance_type=${{ github.event.inputs.instance_type || 't2.micro' }}"
+            -var="instance_type=${{ github.event.inputs.instance_type || 't2.micro' }}" \
             -var="aws_region=${{ github.event.inputs.aws_region || 'ap-south-1' }}"
 
       - name: Deploy Lambda Function
