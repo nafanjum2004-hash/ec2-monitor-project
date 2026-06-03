@@ -1,15 +1,18 @@
 resource "aws_lambda_function" "ec2_monitor" {
 
-  function_name = var.lambda_function_name
+  function_name = "ec2-monitor-function"
 
   filename         = var.lambda_zip
   source_code_hash = filebase64sha256(var.lambda_zip)
 
   role = var.role_arn
 
-  handler = var.lambda_handler
+  handler = "lambda_function.lambda_handler"
 
-  runtime = var.lambda_runtime
+  runtime = "python3.12"
 
-  timeout = var.lambda_timeout
+  timeout = 30
 }
+
+
+
