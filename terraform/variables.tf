@@ -9,3 +9,28 @@ variable "ami_id" {
 variable "instance_type" {
   default = "t2.micro"
 }
+
+variable "role_name" {
+  default = "lambda-ec2-role"
+}
+
+variable "instance_count" {
+default = 3
+}
+
+
+variable "lambda_function_name" {
+  default = "ec2-monitor-function"
+}
+
+variable "lambda_handler" {
+  default = "lambda_function.lambda_handler"
+}
+
+variable "lambda_runtime" {
+  default = "python3.12"
+}
+
+variable "lambda_timeout" {
+  default = 30
+}

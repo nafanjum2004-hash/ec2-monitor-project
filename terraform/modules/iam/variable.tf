@@ -1,1 +1,3 @@
-# No variables required currently
+variable "role_name" {
+  type = string
+}
