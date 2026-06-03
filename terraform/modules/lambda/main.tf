@@ -13,3 +13,6 @@ resource "aws_lambda_function" "ec2_monitor" {
 
   timeout = 30
 }
+
+
+
