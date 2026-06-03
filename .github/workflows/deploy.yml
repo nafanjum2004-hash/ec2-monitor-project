@@ -45,7 +45,7 @@ jobs:
 
       - name: Create Lambda Package
         run: |
-          zip terraform
+          zip -j terraform/lambda.zip lambda_function.py ec2.py
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
