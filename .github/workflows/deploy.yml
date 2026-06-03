@@ -1,9 +1,12 @@
 name: Deploy Lambda Function
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      instance_type:
+        description: 'Enter EC2 Instance Type'
+        required: true
+        default: 't2.micro'
 
 jobs:
   deploy:
@@ -39,16 +42,17 @@ jobs:
       - name: Terraform Plan
         run: |
           cd terraform
-          terraform plan
+          terraform plan \
+            -var="instance_type=${{ github.event.inputs.instance_type }}"
 
       - name: Terraform Apply
         run: |
           cd terraform
-          terraform apply -auto-approve
+          terraform apply -auto-approve \
+            -var="instance_type=${{ github.event.inputs.instance_type }}"
 
       - name: Deploy Lambda Function
         run: |
           aws lambda update-function-code \
             --function-name ec2-monitor-function \
             --zip-file fileb://terraform/lambda.zip
-
