@@ -34,3 +34,9 @@ variable "lambda_runtime" {
 variable "lambda_timeout" {
   default = 30
 }
+
+
+variable "key_name" {
+  type    = string
+  default = "my-key"
+}

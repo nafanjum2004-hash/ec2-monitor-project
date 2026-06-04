@@ -4,6 +4,7 @@ module "ec2" {
   ami_id         = var.ami_id
   instance_type  = var.instance_type
   instance_count = var.instance_count
+  key_name       = var.key_name
 }
 
 module "iam" {
