@@ -19,7 +19,7 @@ variable "key_name" {
 }
 
 variable "role_name" {
-  default = "lambda-ec2-role"
+  default = "lambda-ec2-role-v2"
 }
 
 variable "lambda_function_name" {
