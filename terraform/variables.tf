@@ -11,7 +11,8 @@ variable "instance_count" {
 }
 
 variable "key_name" {
-  type = string
+  type    = string
+  default = "my-key"
 }
 
 variable "ami_id" {
