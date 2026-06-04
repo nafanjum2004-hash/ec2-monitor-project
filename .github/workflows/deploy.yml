@@ -21,9 +21,7 @@ on:
         required: true
         
 
-      instance_count:
-        description: 'Enter Number of EC2 Instances'
-        required: true
+      
 
 
       
@@ -64,7 +62,7 @@ jobs:
           terraform plan \
             -var="instance_type=${{ github.event.inputs.instance_type  }}" \
             -var="aws_region=${{ github.event.inputs.aws_region  }}" \
-            -var="instance_count=${{ github.event.inputs.instance_count  }}"
+            
             
 
       - name: Terraform Apply
@@ -74,7 +72,7 @@ jobs:
           terraform apply -auto-approve \
             -var="instance_type=${{ github.event.inputs.instance_type }}" \
             -var="aws_region=${{ github.event.inputs.aws_region }}" \
-            -var="instance_count=${{ github.event.inputs.instance_count }}"
+            
             
 
       - name: Terraform Destroy
@@ -84,7 +82,7 @@ jobs:
           terraform destroy -auto-approve \
             -var="instance_type=${{ github.event.inputs.instance_type }}" \
             -var="aws_region=${{ github.event.inputs.aws_region }}" \
-            -var="instance_count=${{ github.event.inputs.instance_count }}"
+           
             
 
       - name: Deploy Lambda Function

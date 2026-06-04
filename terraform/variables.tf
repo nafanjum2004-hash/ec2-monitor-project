@@ -7,11 +7,11 @@ variable "instance_type" {
 }
 
 variable "instance_count" {
-  type = number
+  default = 2
 }
 
 variable "ami_id" {
-  default = "ami-07a00cf47dbbc844c"
+  default = "ami-02dd44faa40720bb8"
 }
 
 variable "key_name" {
