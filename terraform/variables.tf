@@ -16,7 +16,7 @@ variable "key_name" {
 }
 
 variable "ami_id" {
-  default = "ami-0f58b397bc5c1f2e8"
+  default = "ami-07a00cf47dbbc844c"
 }
 
 variable "role_name" {
