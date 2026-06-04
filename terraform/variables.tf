@@ -1,21 +1,25 @@
 variable "aws_region" {
-  default = "ap-south-1"
+  type = string
+}
+
+variable "instance_type" {
+  type = string
+}
+
+variable "instance_count" {
+  type = number
 }
 
 variable "ami_id" {
   default = "ami-07a00cf47dbbc844c"
 }
 
-variable "instance_type" {
-  default = "t2.micro"
+variable "key_name" {
+  default = "my-key"
 }
 
 variable "role_name" {
   default = "lambda-ec2-role"
-}
-
-variable "instance_count" {
-  default = 3
 }
 
 variable "lambda_function_name" {
@@ -32,9 +36,4 @@ variable "lambda_runtime" {
 
 variable "lambda_timeout" {
   default = 30
-}
-
-variable "key_name" {
-  type    = string
-  default = "my-key"
 }
