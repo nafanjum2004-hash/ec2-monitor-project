@@ -9,22 +9,22 @@ on:
       action:
         description: 'Choose Action'
         required: true
-        default: 'apply'
+        
 
       instance_type:
         description: 'Enter EC2 Instance Type'
         required: true
-        default: 't2.micro'
+        
 
       aws_region:
         description: 'Enter AWS Region'
         required: true
-        default: 'ap-south-1'
+        
 
       instance_count:
         description: 'Enter Number of EC2 Instances'
         required: true
-        default: '3'
+        
 
 
 jobs:
@@ -59,9 +59,9 @@ jobs:
         run: |
           cd terraform
           terraform plan \
-            -var="instance_type=${{ github.event.inputs.instance_type || 't2.micro' }}" \
-            -var="aws_region=${{ github.event.inputs.aws_region || 'ap-south-1' }}" \
-            -var="instance_count=${{ github.event.inputs.instance_count || '3' }}"
+            -var="instance_type=${{ github.event.inputs.instance_type  }}" \
+            -var="aws_region=${{ github.event.inputs.aws_region  }}" \
+            -var="instance_count=${{ github.event.inputs.instance_count  }}"
 
       - name: Terraform Apply
         if: ${{ github.event.inputs.action == 'apply' }}
